@@ -22,12 +22,12 @@ PrefabInstance:
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
@@ -37,7 +37,7 @@ PrefabInstance:
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
@@ -47,17 +47,17 @@ PrefabInstance:
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
@@ -77,6 +77,12 @@ PrefabInstance:
     - target: {fileID: 8343124237634087078, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: KitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 102aac03a79537544a0033438d0785e1,
+        type: 2}
+    - target: {fileID: 8343124237634087078, guid: 45c2246a79e1996449568847225ab8a6,
+        type: 3}
+      propertyPath: kitchenObjectSO
       value: 
       objectReference: {fileID: 11400000, guid: 102aac03a79537544a0033438d0785e1,
         type: 2}

@@ -19,17 +19,37 @@ public class ClearCounter : BaseCounter
                 player.GetKitchenObject().SetKitchenObjectParent(this);
             }
             else
-            { 
+            {
                 //Player not carring anything
 
             }
         }
         else
         {
-            //There is a KitchenObject here
+            //There is a KitchenObject here   玩家有物品
             if (player.HasKitchenObject())
             {
-                //Player is carring something
+                //Player is carring something 是否拿的是盘子
+                if (player.GetKitchenObject().TryGetComponent(out PlateKitchenObject plateKitchenObject))
+                {
+                    //桌子上的物品是否能添加到盘子里
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySelf();
+                    }
+                }
+                else  //拿的不是盘子
+                {
+                    //桌子上是否有盘子
+                    if (GetKitchenObject().TryGetComponent(out plateKitchenObject))
+                    {
+                        //玩家身上的物品是否能放到盘子里
+                        if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO()))
+                        {
+                            player.GetKitchenObject().DestroySelf();
+                        }
+                    }
+                }
             }
             else
             {

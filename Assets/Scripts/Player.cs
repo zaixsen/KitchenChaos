@@ -43,7 +43,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     private void Update()
     {
         HandleMovement();
-        HandleInterActions();
+        HandleInteractions();
     }
     private void GameInput_OnInteractAlternateAction(object sender, EventArgs e)
     {
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     /// <summary>
     /// 交互
     /// </summary>
-    private void HandleInterActions()
+    private void HandleInteractions()
     {
         //获取输入轴向
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();

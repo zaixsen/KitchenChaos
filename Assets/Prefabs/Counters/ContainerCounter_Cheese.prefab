@@ -16,12 +16,12 @@ PrefabInstance:
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
@@ -31,27 +31,27 @@ PrefabInstance:
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1700586874521823542, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
@@ -71,6 +71,12 @@ PrefabInstance:
     - target: {fileID: 8343124237634087078, guid: 45c2246a79e1996449568847225ab8a6,
         type: 3}
       propertyPath: KitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 213d2c08ce6c2734f8b5db4c4922c60e,
+        type: 2}
+    - target: {fileID: 8343124237634087078, guid: 45c2246a79e1996449568847225ab8a6,
+        type: 3}
+      propertyPath: kitchenObjectSO
       value: 
       objectReference: {fileID: 11400000, guid: 213d2c08ce6c2734f8b5db4c4922c60e,
         type: 2}

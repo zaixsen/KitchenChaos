@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CuttingCounter : BaseCounter
+public class CuttingCounter : BaseCounter, IHasProgress
 {
 
-    public event EventHandler<OnProgressChangedEventArgs> OnProgressChanged;
+    public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
     public class OnProgressChangedEventArgs : EventArgs
     {
         public float progressNomalized;
     }
+
     public event EventHandler OnCut;
 
     [SerializeField] private CuttingRecipeSO[] cuttingRecipeSOArray;
@@ -34,7 +35,7 @@ public class CuttingCounter : BaseCounter
 
                     CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
-                    OnProgressChanged?.Invoke(this, new OnProgressChangedEventArgs()
+                    OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs()
                     {
                         progressNomalized = (float)cuttingProgress / cuttingRecipeSO.cuttingProgressMax
                     });
@@ -52,6 +53,13 @@ public class CuttingCounter : BaseCounter
             if (player.HasKitchenObject())
             {
                 //Player is carring something
+                if (player.GetKitchenObject().TryGetComponent(out PlateKitchenObject plateKitchenObject))
+                {
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySelf();
+                    }
+                }
             }
             else
             {
@@ -80,7 +88,7 @@ public class CuttingCounter : BaseCounter
 
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
-            OnProgressChanged?.Invoke(this, new OnProgressChangedEventArgs()
+            OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs()
             {
                 progressNomalized = (float)cuttingProgress / cuttingRecipeSO.cuttingProgressMax
             });
@@ -105,7 +113,7 @@ public class CuttingCounter : BaseCounter
     private KitchenObjectSO GetOutputForInput(KitchenObjectSO inputKitchenObjectSO)
     {
         CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(inputKitchenObjectSO);
-        if (cuttingRecipeSO.input == inputKitchenObjectSO)
+        if (cuttingRecipeSO != null)
         {
             return cuttingRecipeSO.output;
         }
