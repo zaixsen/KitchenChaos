@@ -7,6 +7,11 @@ public class CuttingCounter : BaseCounter, IHasProgress
 {
     public static event EventHandler OnAnCut;
 
+    new public static void ResetStaticData()
+    {
+        OnAnCut = null;
+    }
+
     public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
     public class OnProgressChangedEventArgs : EventArgs
     {
@@ -87,7 +92,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
             cuttingProgress++;
             OnCut?.Invoke(this, EventArgs.Empty);
             OnAnCut?.Invoke(this, EventArgs.Empty);
-
+            
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
             OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs()
